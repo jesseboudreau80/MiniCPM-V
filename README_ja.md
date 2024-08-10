@@ -1,125 +1,122 @@
 <div align="center">
 
-<img src="./assets/minicpmv.png" width="300em" ></img> 
+<img src="./assets/minicpmv.png" width="300em" ></img>
 
-**A GPT-4V Level MLLM for Single Image, Multi Image and Video on Your Phone**
+**あなたのスマートフォンでシングルイメージ、マルチイメージ、ビデオに対応するGPT-4VレベルのMLLM**
 
   <strong>[中文](./README_zh.md) |
-  English |
-  [日本語](./README_ja.md)</strong>
+  [English](./README_en.md) |
+  日本語</strong>
 
-Join our <a href="docs/wechat.md" target="_blank"> 💬 WeChat</a> 
+<a href="docs/wechat.md" target="_blank"> 💬 WeChat</a> に参加してください
 
 
 <p align="center">
   MiniCPM-V 2.6 <a href="https://huggingface.co/openbmb/MiniCPM-V-2_6">🤗</a> <a href="https://huggingface.co/spaces/openbmb/MiniCPM-V-2_6">🤖</a> | MiniCPM-Llama3-V 2.5  <a href="https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5/">🤗</a> <a href="https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5">🤖</a> |
-  <a href=https://arxiv.org/abs/2408.01800>MiniCPM-Llama3-V 2.5 Technical Report</a> 
+  <a href=https://arxiv.org/abs/2408.01800>MiniCPM-Llama3-V 2.5 技術報告</a> 
 </p>
 
 </div>
 
 
-**MiniCPM-V** is a series of end-side multimodal LLMs (MLLMs) designed for vision-language understanding. The models take image, video and text as inputs and provide high-quality text outputs. Since February 2024, we have released 5 versions of the model, aiming to achieve **strong performance and efficient deployment**. The most notable models in this series currently include:
+**MiniCPM-V**は、視覚と言語の理解を目的としたエンドサイドのマルチモーダルLLM（MLLM）シリーズです。これらのモデルは画像、ビデオ、テキストを入力として受け取り、高品質なテキスト出力を提供します。2024年2月以降、私たちはこのモデルの5つのバージョンをリリースし、**高い性能と効率的なデプロイメント**を目指しています。このシリーズで現在最も注目すべきモデルには以下が含まれます：
 
-- **MiniCPM-V 2.6**: 🔥🔥🔥 The latest and most capable model in the MiniCPM-V series. With a total of 8B parameters, the model **surpasses GPT-4V in single image, multi-image and video understanding**. It outperforms **GPT-4o mini, Gemini 1.5 Pro and Claude 3.5 Sonnet** in single image understanding, and advances MiniCPM-Llama3-V 2.5's features such as strong OCR capability, trustworthy behavior, multilingual support, and end-side deployment. Due to its superior token density, MiniCPM-V 2.6 can for the first time support real-time video understanding on end-side devices such as iPad.
+- **MiniCPM-V 2.6**: 🔥🔥🔥 MiniCPM-Vシリーズの最新かつ最も強力なモデルです。合計8Bのパラメータを持ち、**シングルイメージ、マルチイメージ、ビデオの理解においてGPT-4Vを超えます**。**GPT-4o mini、Gemini 1.5 Pro、Claude 3.5 Sonnet**をシングルイメージの理解で上回り、MiniCPM-Llama3-V 2.5の強力なOCR機能、信頼性のある動作、多言語対応、エンドサイドデプロイメントなどの機能をさらに進化させました。その優れたトークン密度により、MiniCPM-V 2.6は初めてiPadなどのエンドサイドデバイスでリアルタイムのビデオ理解をサポートできます。
 
-- **MiniCPM-V 2.0**: The lightest model in the MiniCPM-V series. With 2B parameters, it surpasses larger models such as Yi-VL 34B, CogVLM-Chat 17B, and Qwen-VL-Chat 10B in overall performance. It can accept image inputs of any aspect ratio and up to 1.8 million pixels (e.g., 1344x1344), achieving comparable performance with Gemini Pro in understanding scene-text and matches GPT-4V in low hallucination rates.
+- **MiniCPM-V 2.0**: MiniCPM-Vシリーズの最軽量モデルです。2Bのパラメータを持ち、Yi-VL 34B、CogVLM-Chat 17B、Qwen-VL-Chat 10Bなどの大規模モデルを総合性能で上回ります。任意のアスペクト比と最大1.8百万ピクセル（例：1344x1344）の画像入力を受け入れることができ、シーンテキストの理解でGemini Proと同等の性能を達成し、低い幻覚率でGPT-4Vに匹敵します。
 
 
-## News <!-- omit in toc -->
+## ニュース <!-- omit in toc -->
 
-#### 📌 Pinned
-
-* [2024.08.10] 🚀🚀🚀 MiniCPM-Llama3-V 2.5 is now fully supported by [official](https://github.com/ggerganov/llama.cpp) llama.cpp! GGUF models of various sizes are available [here](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-gguf).
-* [2024.08.06] 🔥🔥🔥 We open-source MiniCPM-V 2.6, which outperforms GPT-4V on single image, multi-image and video understanding. It advances popular features of MiniCPM-Llama3-V 2.5, and can support real-time video understanding on iPad. Try it now!
-* [2024.08.03] MiniCPM-Llama3-V 2.5 technical report is released! See [here](https://arxiv.org/abs/2408.01800).
-* [2024.07.19] MiniCPM-Llama3-V 2.5 supports vLLM now! See [here](#inference-with-vllm).
-* [2024.05.28] 🚀🚀🚀 MiniCPM-Llama3-V 2.5 now fully supports its feature in llama.cpp and ollama! Please pull the latest code **of our provided forks** ([llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpm-v2.5/examples/minicpmv/README.md), [ollama](https://github.com/OpenBMB/ollama/tree/minicpm-v2.5/examples/minicpm-v2.5)). GGUF models in various sizes are available [here](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-gguf/tree/main). MiniCPM-Llama3-V 2.5 series is **not supported by the official repositories yet**, and we are working hard to merge PRs. Please stay tuned!
-* [2024.05.28] 💫 We now support LoRA fine-tuning for MiniCPM-Llama3-V 2.5, using only 2 V100 GPUs! See more statistics [here](https://github.com/OpenBMB/MiniCPM-V/tree/main/finetune#model-fine-tuning-memory-usage-statistics).
-* [2024.05.23] 🔍 We've released a comprehensive comparison between Phi-3-vision-128k-instruct and MiniCPM-Llama3-V 2.5, including benchmarks evaluations, multilingual capabilities, and inference efficiency 🌟📊🌍🚀. Click [here](./docs/compare_with_phi-3_vision.md) to view more details.
-* [2024.05.23] 🔥🔥🔥 MiniCPM-V tops GitHub Trending and Hugging Face Trending! Our demo, recommended by Hugging Face Gradio’s official account, is available [here](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5). Come and try it out!
+#### 📌 ピン留め
+* [2024.08.06] 🔥🔥🔥 MiniCPM-V 2.6をオープンソース化しました。これはシングルイメージ、マルチイメージ、ビデオの理解でGPT-4Vを上回ります。MiniCPM-Llama3-V 2.5の人気機能を進化させ、iPadでのリアルタイムビデオ理解をサポートします。今すぐお試しください！
+* [2024.08.03] MiniCPM-Llama3-V 2.5の技術報告がリリースされました！詳細は[こちら](https://arxiv.org/abs/2408.01800)をご覧ください。
+* [2024.07.19] MiniCPM-Llama3-V 2.5がvLLMをサポートしました！詳細は[こちら](#inference-with-vllm)をご覧ください。
+* [2024.05.28] 🚀🚀🚀 MiniCPM-Llama3-V 2.5はllama.cppとollamaで完全にサポートされました！最新のコードを**私たちの提供するフォーク**からプルしてください（[llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpm-v2.5/examples/minicpmv/README.md)、[ollama](https://github.com/OpenBMB/ollama/tree/minicpm-v2.5/examples/minicpm-v2.5)）。さまざまなサイズのGGUFモデルが[こちら](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-gguf/tree/main)で利用可能です。MiniCPM-Llama3-V 2.5シリーズは**まだ公式リポジトリではサポートされていません**が、PRのマージに向けて努力しています。続報をお待ちください！
+* [2024.05.28] 💫 MiniCPM-Llama3-V 2.5のLoRAファインチューニングをサポートしました。2つのV100 GPUのみを使用します！詳細な統計情報は[こちら](https://github.com/OpenBMB/MiniCPM-V/tree/main/finetune#model-fine-tuning-memory-usage-statistics)をご覧ください。
+* [2024.05.23] 🔍 Phi-3-vision-128k-instructとMiniCPM-Llama3-V 2.5の包括的な比較をリリースしました。ベンチマーク評価、多言語対応、推論効率などを含みます🌟📊🌍🚀。詳細は[こちら](./docs/compare_with_phi-3_vision.md)をご覧ください。
+* [2024.05.23] 🔥🔥🔥 MiniCPM-VがGitHub TrendingとHugging Face Trendingでトップに立ちました！Hugging Face Gradioの公式アカウントに推薦されたデモは[こちら](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5)で利用可能です。ぜひお試しください！
 
 <br>
 
-<details> 
-<summary>Click to view more news.</summary>
+<details>
+<summary>クリックして詳細なニュースを表示</summary>
 
-* [2024.06.03] Now, you can run MiniCPM-Llama3-V 2.5 on multiple low VRAM GPUs(12 GB or 16 GB) by distributing the model's layers across multiple GPUs. For more details, Check this [link](https://github.com/OpenBMB/MiniCPM-V/blob/main/docs/inference_on_multiple_gpus.md).
-* [2024.05.25] MiniCPM-Llama3-V 2.5 now supports streaming outputs and customized system prompts. Try it [here](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5#usage)!
-* [2024.05.24] We release the MiniCPM-Llama3-V 2.5 [gguf](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-gguf), which supports [llama.cpp](#inference-with-llamacpp) inference and provides a 6~8 token/s smooth decoding on mobile phones. Try it now!
-* [2024.05.20] We open-soure MiniCPM-Llama3-V 2.5, it has improved OCR capability and supports 30+ languages, representing the first end-side MLLM achieving GPT-4V level performance! We provide [efficient inference](#deployment-on-mobile-phone) and [simple fine-tuning](./finetune/readme.md). Try it now!
-* [2024.04.23] MiniCPM-V-2.0 supports vLLM now! Click [here](#inference-with-vllm) to view more details.
-* [2024.04.18] We create a HuggingFace Space to host the demo of MiniCPM-V 2.0 at [here](https://huggingface.co/spaces/openbmb/MiniCPM-V-2)!
-* [2024.04.17] MiniCPM-V-2.0 supports deploying [WebUI Demo](#webui-demo) now!
-* [2024.04.15] MiniCPM-V-2.0 now also supports [fine-tuning](https://github.com/modelscope/swift/blob/main/docs/source/Multi-Modal/minicpm-v-2最佳实践.md) with the SWIFT framework!
-* [2024.04.12] We open-source MiniCPM-V 2.0, which achieves comparable performance with Gemini Pro in understanding scene text and outperforms strong Qwen-VL-Chat 9.6B and Yi-VL 34B on <a href="https://rank.opencompass.org.cn/leaderboard-multimodal">OpenCompass</a>, a comprehensive evaluation over 11 popular benchmarks. Click <a href="https://openbmb.vercel.app/minicpm-v-2">here</a> to view the MiniCPM-V 2.0 technical blog.
-* [2024.03.14] MiniCPM-V now supports [fine-tuning](https://github.com/modelscope/swift/blob/main/docs/source/Multi-Modal/minicpm-v最佳实践.md) with the SWIFT framework. Thanks to [Jintao](https://github.com/Jintao-Huang) for the contribution！
-* [2024.03.01] MiniCPM-V now can be deployed on Mac!
-* [2024.02.01] We open-source MiniCPM-V and OmniLMM-12B, which support efficient end-side deployment and powerful multimodal capabilities correspondingly.
-</details> 
+* [2024.06.03] MiniCPM-Llama3-V 2.5を複数の低VRAM GPU（12 GBまたは16 GB）で実行できます。詳細は[こちら](https://github.com/OpenBMB/MiniCPM-V/blob/main/docs/inference_on_multiple_gpus.md)をご覧ください。
+* [2024.05.25] MiniCPM-Llama3-V 2.5はストリーミング出力とカスタマイズされたシステムプロンプトをサポートしました。お試しください[こちら](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5#usage)！
+* [2024.05.24] MiniCPM-Llama3-V 2.5 [gguf](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-gguf)をリリースしました。これは[llama.cpp](#inference-with-llamacpp)推論をサポートし、モバイルフォンで6〜8トークン/秒のスムーズなデコードを提供します。今すぐお試しください！
+* [2024.05.20] MiniCPM-Llama3-V 2.5をオープンソース化しました。OCR機能が向上し、30以上の言語をサポートします。これはエンドサイドでGPT-4Vレベルの性能を達成した最初のMLLMです！[効率的な推論](#deployment-on-mobile-phone)と[簡単なファインチューニング](./finetune/readme.md)を提供します。今すぐお試しください！
+* [2024.04.23] MiniCPM-V-2.0がvLLMをサポートしました！詳細は[こちら](#inference-with-vllm)をご覧ください。
+* [2024.04.18] MiniCPM-V 2.0のデモをホストするためにHuggingFace Spaceを作成しました。[こちら](https://huggingface.co/spaces/openbmb/MiniCPM-V-2)でご覧ください。
+* [2024.04.17] MiniCPM-V-2.0が[WebUI Demo](#webui-demo)のデプロイをサポートしました！
+* [2024.04.15] MiniCPM-V-2.0がSWIFTフレームワークでの[ファインチューニング](https://github.com/modelscope/swift/blob/main/docs/source/Multi-Modal/minicpm-v-2最佳实践.md)をサポートしました！
+* [2024.04.12] MiniCPM-V 2.0をオープンソース化しました。これはシーンテキストの理解でGemini Proと同等の性能を達成し、強力なQwen-VL-Chat 9.6BとYi-VL 34Bを上回ります。<a href="https://rank.opencompass.org.cn/leaderboard-multimodal">OpenCompass</a>での評価結果をご覧ください。MiniCPM-V 2.0の技術ブログは<a href="https://openbmb.vercel.app/minicpm-v-2">こちら</a>です。
+* [2024.03.14] MiniCPM-VがSWIFTフレームワークでの[ファインチューニング](https://github.com/modelscope/swift/blob/main/docs/source/Multi-Modal/minicpm-v最佳实践.md)をサポートしました。貢献してくれた[Jintao](https://github.com/Jintao-Huang)に感謝します！
+* [2024.03.01] MiniCPM-VがMacでのデプロイをサポートしました！
+* [2024.02.01] MiniCPM-VとOmniLMM-12Bをオープンソース化しました。これらはそれぞれ効率的なエンドサイドデプロイメントと強力なマルチモーダル機能をサポートします。
+</details>
 
 
-## Contents <!-- omit in toc -->
+## 目次 <!-- omit in toc -->
 
 
 - [MiniCPM-V 2.6](#minicpm-v-26)
 - [MiniCPM-Llama3-V 2.5](#minicpm-llama3-v-25)
 - [MiniCPM-V 2.0](#minicpm-v-20)
-- [Chat with Our Demo on Gradio 🤗](#chat-with-our-demo-on-gradio-)
-- [Install](#install)
-- [Inference](#inference)
-  - [Model Zoo](#model-zoo)
-  - [Multi-turn Conversation](#multi-turn-conversation)
-    - [Chat with multiple images](#chat-with-multiple-images)
-    - [In-context few-shot learning](#in-context-few-shot-learning)
-    - [Chat with video](#chat-with-video)
-  - [Inference on Multiple GPUs](#inference-on-multiple-gpus)
-  - [Inference on Mac](#inference-on-mac)
-  - [Deployment on Mobile Phone](#deployment-on-mobile-phone)
-  - [Inference with llama.cpp](#inference-with-llamacpp)
-  - [Inference with ollama](#inference-with-ollama)
-  - [Inference with vLLM](#inference-with-vllm)
-- [Fine-tuning](#fine-tuning)
+- [Gradioデモでチャットする 🤗](#chat-with-our-demo-on-gradio-)
+- [インストール](#install)
+- [推論](#inference)
+  - [モデルズー](#model-zoo)
+  - [マルチターン会話](#multi-turn-conversation)
+    - [複数の画像でチャット](#chat-with-multiple-images)
+    - [インコンテキスト少数ショット学習](#in-context-few-shot-learning)
+    - [ビデオでチャット](#chat-with-video)
+  - [複数のGPUでの推論](#inference-on-multiple-gpus)
+  - [Macでの推論](#inference-on-mac)
+  - [モバイルフォンでのデプロイ](#deployment-on-mobile-phone)
+  - [llama.cppでの推論](#inference-with-llamacpp)
+  - [ollamaでの推論](#inference-with-ollama)
+  - [vLLMでの推論](#inference-with-vllm)
+- [ファインチューニング](#fine-tuning)
 - [FAQs](#faqs)
 
 
 ## MiniCPM-V 2.6
 
-**MiniCPM-V 2.6** is the latest and most capable model in the MiniCPM-V series. The model is built on SigLip-400M and Qwen2-7B with a total of 8B parameters. It exhibits a significant performance improvement over MiniCPM-Llama3-V 2.5, and introduces new features for multi-image and video understanding. Notable features of MiniCPM-V 2.6 include:
+**MiniCPM-V 2.6**は、MiniCPM-Vシリーズの最新かつ最も強力なモデルです。このモデルはSigLip-400MとQwen2-7Bを基に構築され、合計8Bのパラメータを持ちます。MiniCPM-Llama3-V 2.5に比べて大幅な性能向上を示し、マルチイメージとビデオ理解の新機能を導入しています。MiniCPM-V 2.6の主な特徴は以下の通りです：
 
-- 🔥 **Leading Performance.**
-  MiniCPM-V 2.6 achieves an average score of 65.2 on the latest version of OpenCompass, a comprehensive evaluation over 8 popular benchmarks. **With only 8B parameters, it surpasses widely used proprietary models like GPT-4o mini, GPT-4V, Gemini 1.5 Pro, and Claude 3.5 Sonnet** for single image understanding.
+- 🔥 **先進的な性能。**
+  MiniCPM-V 2.6は、8つの人気ベンチマークを包括的に評価するOpenCompassの最新バージョンで平均スコア65.2を達成しました。**わずか8Bのパラメータで、GPT-4o mini、GPT-4V、Gemini 1.5 Pro、Claude 3.5 Sonnetなどの広く使用されている商用モデルをシングルイメージ理解で上回ります**。
 
-- 🖼️ **Multi Image Understanding and In-context Learning.** MiniCPM-V 2.6 can also perform **conversation and reasoning over multiple images**. It achieves **state-of-the-art performance** on popular multi-image benchmarks such as Mantis-Eval, BLINK, Mathverse mv and Sciverse mv, and also shows promising in-context learning capability.
+- 🖼️ **マルチイメージ理解とインコンテキスト学習。** MiniCPM-V 2.6は**複数の画像に対する会話と推論**も行えます。Mantis-Eval、BLINK、Mathverse mv、Sciverse mvなどの人気のマルチイメージベンチマークで**最先端の性能**を達成し、インコンテキスト学習能力も示しています。
 
-- 🎬 **Video Understanding.** MiniCPM-V 2.6 can also **accept video inputs**, performing conversation and providing dense captions for spatial-temporal information. It outperforms **GPT-4V, Claude 3.5 Sonnet and LLaVA-NeXT-Video-34B** on Video-MME with/without subtitles.
+- 🎬 **ビデオ理解。** MiniCPM-V 2.6は**ビデオ入力も受け入れ**、会話を行い、時空間情報の詳細なキャプションを提供します。**GPT-4V、Claude 3.5 Sonnet、LLaVA-NeXT-Video-34B**をビデオMMEで字幕あり/なしの両方で上回ります。
 
-- 💪 **Strong OCR Capability and Others.**
-  MiniCPM-V 2.6 can process images with any aspect ratio and up to 1.8 million pixels (e.g., 1344x1344). It achieves **state-of-the-art performance on OCRBench, surpassing proprietary models such as GPT-4o, GPT-4V, and Gemini 1.5 Pro**.
-  Based on the the latest [RLAIF-V](https://github.com/RLHF-V/RLAIF-V/) and [VisCPM](https://github.com/OpenBMB/VisCPM) techniques, it features **trustworthy behaviors**, with significantly lower hallucination rates than GPT-4o and GPT-4V on Object HalBench, and supports **multilingual capabilities** on English, Chinese, German, French, Italian, Korean, etc.
+- 💪 **強力なOCR機能とその他の機能。**
+  MiniCPM-V 2.6は任意のアスペクト比と最大1.8百万ピクセル（例：1344x1344）の画像を処理できます。**OCRBenchで最先端の性能を達成し、GPT-4o、GPT-4V、Gemini 1.5 Proなどの商用モデルを上回ります**。
+  最新の[RLAIF-V](https://github.com/RLHF-V/RLAIF-V/)と[VisCPM](https://github.com/OpenBMB/VisCPM)技術に基づき、**信頼性のある動作**を特徴とし、Object HalBenchでGPT-4oやGPT-4Vよりもはるかに低い幻覚率を示し、英語、中国語、ドイツ語、フランス語、イタリア語、韓国語などの**多言語対応**をサポートします。
 
+- 🚀 **優れた効率性。**
+  そのフレンドリーなサイズに加えて、MiniCPM-V 2.6は**最先端のトークン密度**（つまり、各視覚トークンにエンコードされるピクセル数）も示しています。**1.8Mピクセルの画像を処理する際に640トークンしか生成せず、ほとんどのモデルよりも75％少ない**。これにより、推論速度、最初のトークンの遅延、メモリ使用量、消費電力が直接向上します。その結果、MiniCPM-V 2.6はiPadなどのエンドサイドデバイスで**リアルタイムのビデオ理解**を効率的にサポートできます。
 
-- 🚀 **Superior Efficiency.**
-  In addition to its friendly size, MiniCPM-V 2.6 also shows **state-of-the-art token density** (i.e., number of pixels encoded into each visual token). **It produces only 640 tokens when processing a 1.8M pixel image, which is 75% fewer than most models**. This directly improves the inference speed, first-token latency, memory usage, and power consumption. As a result, MiniCPM-V 2.6 can efficiently support **real-time video understanding** on end-side devices such as iPad.
+-  💫  **簡単な使用。**
+MiniCPM-V 2.6はさまざまな方法で簡単に使用できます：（1）[llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpmv-main/examples/llava/README-minicpmv2.6.md)と[ollama](https://github.com/OpenBMB/ollama/blob/minicpm-v2.6/examples/minicpm-v2.6/README.md)のサポートにより、ローカルデバイスで効率的なCPU推論が可能、（2）[int4](https://huggingface.co/openbmb/MiniCPM-V-2_6-int4)と[GGUF](https://huggingface.co/openbmb/MiniCPM-V-2_6-gguf)形式の量子化モデルが16サイズで提供、（3）[vLLM](#inference-with-vllm)のサポートにより、高スループットとメモリ効率の高い推論が可能、（4）新しいドメインやタスクでのファインチューニング、（5）[Gradio](#chat-with-our-demo-on-gradio)を使用してローカルWebUIデモを迅速に設定、（6）オンラインWeb[デモ](https://huggingface.co/spaces/openbmb/MiniCPM-V-2_6)。
 
--  💫  **Easy Usage.**
-MiniCPM-V 2.6 can be easily used in various ways: (1) [llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpmv-main/examples/llava/README-minicpmv2.6.md) and [ollama](https://github.com/OpenBMB/ollama/blob/minicpm-v2.6/examples/minicpm-v2.6/README.md) support for efficient CPU inference on local devices, (2) [int4](https://huggingface.co/openbmb/MiniCPM-V-2_6-int4) and [GGUF](https://huggingface.co/openbmb/MiniCPM-V-2_6-gguf) format quantized models in 16 sizes, (3) [vLLM](#inference-with-vllm) support for high-throughput and memory-efficient inference, (4) fine-tuning on new domains and tasks, (5) quick local WebUI demo setup with [Gradio](#chat-with-our-demo-on-gradio), and (6) online web [demo](https://huggingface.co/spaces/openbmb/MiniCPM-V-2_6).
-
-### Evaluation  <!-- omit in toc -->
+### 評価  <!-- omit in toc -->
 <div align="center">
     <img src=assets/radar_final.png width=66% />
 </div>
 
 <details>
-<summary>Click to view single image results on OpenCompass, MME, MMVet, OCRBench, MMMU, MathVista, MMB, AI2D, TextVQA, DocVQA, HallusionBench, Object HalBench. </summary>
+<summary>OpenCompass, MME, MMVet, OCRBench, MMMU, MathVista, MMB, AI2D, TextVQA, DocVQA, HallusionBench, Object HalBenchのシングルイメージ結果を表示</summary>
 <div align="center">
 
 <table style="margin: 0px auto;">
     <thead>
         <tr>
-            <th align="left">Model</th>
-            <th>Size</th>
-            <th>Token Density<sup>+</sup></th>
+            <th align="left">モデル</th>
+            <th>サイズ</th>
+            <th>トークン密度<sup>+</sup></th>
             <th>OpenCompass</th>
             <th>MME</th>
             <th>MMVet</th>
@@ -136,7 +133,7 @@ MiniCPM-V 2.6 can be easily used in various ways: (1) [llama.cpp](https://github
     </thead>
     <tbody align="center">
         <tr>
-            <td colspan="15" align="left"><strong>Proprietary</strong></td>
+            <td colspan="15" align="left"><strong>商用</strong></td>
         </tr>
         <tr>
             <td nowrap="nowrap" align="left">GPT-4o</td>
@@ -258,7 +255,7 @@ MiniCPM-V 2.6 can be easily used in various ways: (1) [llama.cpp](https://github
             <td>13.4</td>
         </tr>
         <tr>
-            <td colspan="15" align="left"><strong>Open-source</strong></td>
+            <td colspan="15" align="left"><strong>オープンソース</strong></td>
         </tr>
         <tr>
             <td nowrap="nowrap" align="left">LLaVA-NeXT-Yi-34B</td>
@@ -383,24 +380,24 @@ MiniCPM-V 2.6 can be easily used in various ways: (1) [llama.cpp](https://github
 </table>
 
 </div>
-* We evaluate this benchmark using chain-of-thought prompting. Specifically, for MME, we used this technique only for the Cognition set.
+* このベンチマークは思考の連鎖プロンプティングを使用して評価しました。具体的には、MMEではこの技術をCognitionセットにのみ使用しました。
 
-<sup>+</sup> Token Density: number of pixels encoded into each visual token at maximum resolution, i.e., # pixels at maximum resolution / # visual tokens.
+<sup>+</sup> トークン密度：最大解像度で各視覚トークンにエンコードされるピクセル数、つまり最大解像度でのピクセル数/視覚トークン数。
 
-Note: For proprietary models, we calculate token density based on the image encoding charging strategy defined in the official API documentation, which provides an upper-bound estimation.
+注：商用モデルについては、公式APIドキュメントで定義された画像エンコード課金戦略に基づいてトークン密度を計算し、上限を推定しています。
 
 </details>
 
 
 <details>
-<summary>Click to view multi-image results on Mantis Eval, BLINK, Mathverse mv, Sciverse mv, MIRB.</summary>
+<summary>Mantis Eval, BLINK, Mathverse mv, Sciverse mv, MIRBのマルチイメージ結果を表示</summary>
 <div align="center">
- 
+
 <table style="margin: 0px auto;">
     <thead>
         <tr>
-            <th align="left">Model</th>
-            <th>Size</th>
+            <th align="left">モデル</th>
+            <th>サイズ</th>
             <th>Mantis Eval</th>
             <th>BLINK val</th>
             <th>Mathverse mv</th>
@@ -410,7 +407,7 @@ Note: For proprietary models, we calculate token density based on the image enco
     </thead>
     <tbody align="center">
         <tr>
-            <td colspan="7" align="left"><strong>Proprietary</strong></td>
+            <td colspan="7" align="left"><strong>商用</strong></td>
         </tr>
         <tr>
             <td nowrap="nowrap" align="left">GPT-4V</td>
@@ -431,7 +428,7 @@ Note: For proprietary models, we calculate token density based on the image enco
             <td>-</td>
         </tr>
         <tr>
-            <td colspan="7" align="left"><strong>Open-source</strong></td>
+            <td colspan="7" align="left"><strong>オープンソース</strong></td>
         </tr>
         <tr>
             <td nowrap="nowrap" align="left">Emu2-Chat</td>
@@ -500,35 +497,35 @@ Note: For proprietary models, we calculate token density based on the image enco
 </table>
 
 </div>
-* We evaluate the officially released checkpoint by ourselves.
+* 正式にリリースされたチェックポイントを自分で評価しました。
 </details>
 
 <details>
-<summary>Click to view video results on Video-MME and Video-ChatGPT.</summary>
+<summary>Video-MMEとVideo-ChatGPTのビデオ結果を表示</summary>
 <div align="center">
 <table style="margin: 0px auto;">
     <thead>
         <tr>
-            <th align="left">Model</th>
-            <th>Size</th>
+            <th align="left">モデル</th>
+            <th>サイズ</th>
             <th colspan="2">Video-MME</th>
             <th colspan="5">Video-ChatGPT</th>
         </tr>
         <tr>
             <th align="left"></th>
             <th></th>
-            <th>w/o subs</th>
-            <th>w subs</th>
-            <th>Correctness</th>
-            <th>Detail</th>
-            <th>Context</th>
-            <th>Temporal</th>
-            <th>Consistency</th>
+            <th>字幕なし</th>
+            <th>字幕あり</th>
+            <th>正確性</th>
+            <th>詳細</th>
+            <th>コンテキスト</th>
+            <th>時系列</th>
+            <th>一貫性</th>
         </tr>
     </thead>
     <tbody align="center">
         <tr>
-            <td colspan="9" align="left"><strong>Proprietary</strong></td>
+            <td colspan="9" align="left"><strong>商用</strong></td>
         </tr>
         <tr>
             <td nowrap="nowrap" align="left">Claude 3.5 Sonnet</td>
@@ -553,7 +550,7 @@ Note: For proprietary models, we calculate token density based on the image enco
             <td>-</td>
         </tr>
         <tr>
-            <td colspan="9" align="left"><strong>Open-source</strong></td>
+            <td colspan="9" align="left"><strong>オープンソース</strong></td>
         </tr>
         <tr>
             <td nowrap="nowrap" align="left">LLaVA-NeXT-7B</td>
@@ -650,14 +647,14 @@ Note: For proprietary models, we calculate token density based on the image enco
 
 
 <details>
-<summary>Click to view few-shot results on TextVQA, VizWiz, VQAv2, OK-VQA.</summary>
+<summary>TextVQA, VizWiz, VQAv2, OK-VQAの少数ショット結果を表示</summary>
 <div align="center">
 <table style="margin: 0px auto;">
     <thead>
         <tr>
-            <th align="left">Model</th>
-            <th>Size</th>
-            <th>Shot</th>
+            <th align="left">モデル</th>
+            <th>サイズ</th>
+            <th>ショット</th>
             <th>TextVQA val</th>
             <th>VizWiz test-dev</th>
             <th>VQAv2 test-dev</th>
@@ -801,12 +798,12 @@ Note: For proprietary models, we calculate token density based on the image enco
 
 
 </div>
-* denotes zero image shot and two additional text shots following Flamingo.
+* はイメージショットがゼロで、フラミンゴの後にテキストショットが2つ追加されたことを示します。
 
-<sup>+</sup> We evaluate the pretraining ckpt without SFT.
+<sup>+</sup> SFTを使用しない事前トレーニングのckptを評価する。
 </details>
 
-### Examples <!-- omit in toc -->
+### 例 <!-- omit in toc -->
 
 <div style="display: flex; flex-direction: column; align-items: center;">
   <img src="assets/minicpmv2_6/multi_img-bike.png" alt="Bike" style="margin-bottom: 5px;">
@@ -816,30 +813,30 @@ Note: For proprietary models, we calculate token density based on the image enco
   <img src="assets/minicpmv2_6/multiling-medal.png" alt="medal" style="margin-bottom: 10px;">
 </div>
 <details>
-  <summary>Click to view more cases.</summary>
+  <summary>クリックして他のケースを見る。</summary>
   <div style="display: flex; flex-direction: column; align-items: center;">
     <img src="assets/minicpmv2_6/ICL-elec.png" alt="elec" style="margin-bottom: 5px;">
     <img src="assets/minicpmv2_6/multiling-olympic.png" alt="Menu" style="margin-bottom: 10px;">
   </div>
 </details>
 
-We deploy MiniCPM-V 2.6 on end devices. The demo video is the raw screen recording on a iPad Pro without edition.
+私達はMiniCPM-V 2.6をエンドデバイスに導入しています。デモビデオは、iPad Proのエディションなしの生の画面録画です。
 
-<table align="center"> 
+<table align="center">
     <p align="center">
       <img src="assets/gif_cases/ai.gif" width=32%/>
       &nbsp;&nbsp;&nbsp;&nbsp;
       <img src="assets/gif_cases/beer.gif" width=32%/>
     </p>
-</table> 
+</table>
 
-<table align="center"> 
+<table align="center">
     <p align="center">
       <img src="assets/gif_cases/ticket.gif" width=32%/>
       &nbsp;&nbsp;&nbsp;&nbsp;
       <img src="assets/gif_cases/wfh.gif" width=32%/>
     </p>
-</table> 
+</table>
 
 <table align="center">
     <p align="center">
@@ -851,35 +848,35 @@ We deploy MiniCPM-V 2.6 on end devices. The demo video is the raw screen recordi
 ## MiniCPM-Llama3-V 2.5
 
 <details>
-<summary>Click to view more details of MiniCPM-Llama3-V 2.5</summary>
+<summary>クリックして MiniCPM-Llama3-V 2.5 の詳細を表示</summary>
 
-**MiniCPM-Llama3-V 2.5** is the latest model in the MiniCPM-V series. The model is built on SigLip-400M and Llama3-8B-Instruct with a total of 8B parameters. It exhibits a significant performance improvement over MiniCPM-V 2.0. Notable features of MiniCPM-Llama3-V 2.5 include:
+**MiniCPM-Llama3-V 2.5** は MiniCPM-V シリーズの最新モデルです。このモデルは SigLip-400M と Llama3-8B-Instruct をベースに構築されており、合計 8B のパラメータを備えています。MiniCPM-V 2.0に比べ、パフォーマンスが大幅に向上しています。MiniCPM-Llama3-V 2.5の主な特徴は以下の通りになります:
 
-- 🔥 **Leading Performance.**
-  MiniCPM-Llama3-V 2.5 has achieved an average score of 65.1 on OpenCompass, a comprehensive evaluation over 11 popular benchmarks. **With only 8B parameters, it surpasses widely used proprietary models like GPT-4V-1106, Gemini Pro, Claude 3 and Qwen-VL-Max** and greatly outperforms other Llama 3-based MLLMs.
+- 🔥 **一流のパフォーマンス。**
+  MiniCPM-Llama3-V 2.5は、11の一般的なベンチマークを総合的に評価するOpenCompassで、平均スコア65.1を達成しました。**わずか 8B のパラメータで、GPT-4V-1106、Gemini Pro、Claude 3、Qwen-VL-Max** のような広く使用されている独自のモデルを凌駕し、他のLlama 3ベースのMLLMを大きく上回ります。
 
-- 💪 **Strong OCR Capabilities.**
-  MiniCPM-Llama3-V 2.5 can process images with any aspect ratio and up to 1.8 million pixels (e.g., 1344x1344), achieving a **700+ score on OCRBench, surpassing proprietary models such as GPT-4o, GPT-4V-0409, Qwen-VL-Max and Gemini Pro**. Based on recent user feedback, MiniCPM-Llama3-V 2.5 has now enhanced full-text OCR extraction, table-to-markdown conversion, and other high-utility capabilities, and has further strengthened its instruction-following and complex reasoning abilities, enhancing multimodal interaction experiences.
+- 💪 **強力なOCR機能。**
+  MiniCPM-Llama3-V 2.5は、あらゆるアスペクト比、最大180万画素（例：1344x1344）の画像を処理でき、OCRBenchで **700+ スコアを達成し、GPT-4o、GPT-4V-0409、Qwen-VL-Max、Gemini Pro** などの独自モデルを凌駕しています。最近のユーザーからのフィードバックに基づき、MiniCPM-Llama3-V 2.5では、全文OCR抽出、表からマークダウンへの変換、その他の高ユーティリティ機能が強化され、さらに指示追従能力と複雑な推論能力が強化され、マルチモーダルなインタラクション体験が向上しました。
 
-- 🏆 **Trustworthy Behavior.**
-  Leveraging the latest [RLAIF-V](https://github.com/RLHF-V/RLAIF-V/) method (the newest technique in the [RLHF-V](https://github.com/RLHF-V) [CVPR'24] series), MiniCPM-Llama3-V 2.5 exhibits more trustworthy behavior. It achieves a **10.3%** hallucination rate on Object HalBench, lower than GPT-4V-1106 (13.6%), achieving the best-level performance within the open-source community. [Data released](https://huggingface.co/datasets/openbmb/RLAIF-V-Dataset).
+- 🏆 **信頼できる行動。**
+  最新の[RLAIF-V](https://github.com/RLHF-V/RLAIF-V/)方式（[RLHF-V](https://github.com/RLHF-V)[CVPR'24]シリーズの最新技術）を活用したMiniCPM-Llama3-V 2.5は、より信頼性の高い挙動を示します。これは、Object HalBenchで **10.3%** のハルシネーション率を達成し、GPT-4V-1106（13.6%）より低く、オープンソースコミュニティ内で最高レベルの性能を達成しました。[データ公開](https://huggingface.co/datasets/openbmb/RLAIF-V-Dataset)。
 
-- 🌏 **Multilingual Support.**
-  Thanks to the strong multilingual capabilities of Llama 3 and the cross-lingual generalization technique from [VisCPM](https://github.com/OpenBMB/VisCPM), MiniCPM-Llama3-V 2.5 extends its bilingual (Chinese-English) multimodal capabilities to **over 30 languages including German, French, Spanish, Italian, Korean etc.** [All Supported Languages](./assets/minicpm-llama-v-2-5_languages.md).
+- 🌏 **多言語対応。**
+  Llama3の強力な多言語機能と[VisCPM](https://github.com/OpenBMB/VisCPM)のクロスリンガル汎化技術のおかげで、MiniCPM-Llama3-V 2.5は、そのバイリンガル（中国語-英語）マルチモーダル機能を、ドイツ語、フランス語、スペイン語、イタリア語、韓国語などを含む **30 以上の言語に拡張します** [すべてのサポート言語](./assets/minicpm-llama-v-2-5_languages.md)。
 
-- 🚀 **Efficient Deployment.**
-  MiniCPM-Llama3-V 2.5 systematically employs **model quantization, CPU optimizations, NPU optimizations and compilation optimizations**, achieving high-efficiency deployment on end-side devices. For mobile phones with Qualcomm chips, we have integrated the NPU acceleration framework QNN into llama.cpp for the first time. After systematic optimization, MiniCPM-Llama3-V 2.5 has realized a **150x acceleration in end-side MLLM image encoding** and a **3x speedup in language decoding**.
+- 🚀 **効率的なデプロイ。**
+  MiniCPM-Llama3-V 2.5は、**モデルの量子化、CPUの最適化、NPUの最適化、コンパイルの最適化**を体系的に採用し、エンドサイド機器への高効率な導入を実現しています。Qualcomm のチップを搭載した携帯電話向けに、NPUアクセラレーションフレームワークQNNをllama.cppに初めて統合しました。システマティックな最適化の後、MiniCPM-Llama3-V 2.5は、エンドサイドのMLLM画像エンコーディングにおいて**150倍の高速化**、言語デコーディングにおいて**3倍の高速化**を実現しました。
 
--  💫  **Easy Usage.**
-MiniCPM-Llama3-V 2.5 can be easily used in various ways: (1) [llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpm-v2.5/examples/minicpmv/README.md) and [ollama](https://github.com/OpenBMB/ollama/tree/minicpm-v2.5/examples/minicpm-v2.5) support for efficient CPU inference on local devices, (2) [GGUF](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-gguf) format quantized models in 16 sizes, (3) efficient [LoRA](https://github.com/OpenBMB/MiniCPM-V/tree/main/finetune#lora-finetuning) fine-tuning with only 2 V100 GPUs, (4) [streaming output](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5#usage), (5) quick local WebUI demo setup with [Gradio](https://github.com/OpenBMB/MiniCPM-V/blob/main/web_demo_2.5.py) and [Streamlit](https://github.com/OpenBMB/MiniCPM-V/blob/main/web_demo_streamlit-2_5.py), and (6) interactive demos on [HuggingFace Spaces](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5).
+-  💫  **簡単な使用法。**
+MiniCPM-Llama3-V 2.5は様々な方法で簡単に使用できます: (1) [llama.cpp](https://github.com/OpenBMB/llama.cpp/blob/minicpm-v2.5/examples/minicpmv/README.md)と[ollama](https://github.com/OpenBMB/ollama/tree/minicpm-v2.5/examples/minicpm-v2.5)によるローカルデバイス上での効率的なCPU推論のサポート、(2) [GGUF](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-gguf)による16サイズの量子化モデルのフォーマット、(3) 効率的な[LoRA](https://github. com/OpenBMB/MiniCPM-V/tree/main/finetune#lora-finetuning)による微調整、(4) [ストリーミング出力](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5#usage)、(5) [Gradio](https://github.com/OpenBMB/MiniCPM-V/blob/main/web_demo_2.5.py)と[Streamlit](https://github.com/OpenBMB/MiniCPM-V/blob/main/web_demo_streamlit-2_5.py)による迅速なローカルWebUIデモセットアップ、(6) [HuggingFace Spaces](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5)によるインタラクティブデモ。
 
-### Evaluation  <!-- omit in toc -->
+### 評価  <!-- omit in toc -->
 
 <div align="center">
     <img src=assets/MiniCPM-Llama3-V-2.5-peformance.png width=66% />
 </div>
 <details>
-<summary>Click to view results on TextVQA, DocVQA, OCRBench, OpenCompass, MME, MMBench, MMMU, MathVista, LLaVA Bench, RealWorld QA, Object HalBench. </summary>
+<summary>TextVQA、DocVQA、OCRBench、OpenCompass、MME、MMBench、MMMU、MathVista、LLaVA Bench、RealWorld QA、Object HalBench の結果を見るにはクリックしてください。</summary>
 <div align="center">
 
 <table style="margin: 0px auto;">
@@ -903,7 +900,7 @@ MiniCPM-Llama3-V 2.5 can be easily used in various ways: (1) [llama.cpp](https:/
     </thead>
     <tbody align="center">
         <tr>
-            <td colspan="14" align="left"><strong>Proprietary</strong></td>
+            <td colspan="14" align="left"><strong>商用</strong></td>
         </tr>
         <tr>
             <td nowrap="nowrap" align="left">Gemini Pro</td>
@@ -938,7 +935,7 @@ MiniCPM-Llama3-V 2.5 can be easily used in various ways: (1) [llama.cpp](https:/
             <td>86.4</td>
         </tr>
         <tr>
-            <td colspan="14" align="left"><strong>Open-source</strong></td>
+            <td colspan="14" align="left"><strong>オープンソース</strong></td>
         </tr>
         <tr>
             <td nowrap="nowrap" align="left">Mini-Gemini</td>
@@ -987,7 +984,7 @@ MiniCPM-Llama3-V 2.5 can be easily used in various ways: (1) [llama.cpp](https:/
             <td>77.8</td>
             <td>54.2</td>
             <td>-</td>
-        </tr>        
+        </tr>
         <tr>
             <td nowrap="nowrap" align="left">Yi-VL-34B</td>
             <td>34B</td>
@@ -1153,20 +1150,20 @@ MiniCPM-Llama3-V 2.5 can be easily used in various ways: (1) [llama.cpp](https:/
 
 
 </div>
-* We evaluate the officially released checkpoint by ourselves.
+* 公式発表されたチェックポイントを自分たちで評価する。
 
 </details>
 
 <div align="center">
     <img src="assets/llavabench_compare_3.png" width="100%" />
     <br>
-    Evaluation results of multilingual LLaVA Bench
+    多言語版LLaVA Benchの評価結果
 </div>
 
 ### Examples <!-- omit in toc -->
 
 <table align="center" >
-  <p align="center" > 
+  <p align="center" >
   <img src="assets/minicpmv-llama3-v2.5/cases_all.png" />
   </p>
 </table>
@@ -1177,32 +1174,32 @@ MiniCPM-Llama3-V 2.5 can be easily used in various ways: (1) [llama.cpp](https:/
 ## MiniCPM-V 2.0
 
 <details>
-<summary>Click to view more details of MiniCPM-V 2.0</summary>
+<summary>MiniCPM-V 2.0 の詳細を見るにはクリックしてください。</summary>
 
 
-**MiniCPM-V 2.0** is an efficient version with promising performance for deployment. The model is built based on SigLip-400M and [MiniCPM-2.4B](https://github.com/OpenBMB/MiniCPM/), connected by a perceiver resampler. Our latest version, MiniCPM-V 2.0 has several notable features. 
+**MiniCPM-V 2.0** は、デプロイに有望な性能を持つ効率的なバージョンである。このモデルはSigLip-400Mと[MiniCPM-2.4B](https://github.com/OpenBMB/MiniCPM/)をベースに構築されており、perceiver resampler で接続されています。最新バージョンのMiniCPM-V 2.0には、いくつかの特筆すべき特徴があります。
 
-- 🔥 **State-of-the-art Performance.** 
+- 🔥 **最先端のパフォーマンス。**
 
-  MiniCPM-V 2.0 achieves **state-of-the-art performance** on multiple benchmarks (including OCRBench, TextVQA, MME, MMB, MathVista, etc) among models under 7B parameters. It even **outperforms strong Qwen-VL-Chat 9.6B, CogVLM-Chat 17.4B, and Yi-VL 34B on OpenCompass, a comprehensive evaluation over 11 popular benchmarks**. Notably, MiniCPM-V 2.0 shows **strong OCR capability**, achieving **comparable performance to Gemini Pro in scene-text understanding**, and **state-of-the-art performance on OCRBench** among open-source models.
+  MiniCPM-V 2.0は、7Bのパラメータを持つモデルの中で、複数のベンチマーク（OCRBench、TextVQA、MME、MMB、MathVistaなどを含む）で**最先端のパフォーマンス**を達成しています。11の一般的なベンチマークを総合的に評価するOpenCompass**では、強力なQwen-VL-Chat 9.6B、CogVLM-Chat 17.4B、Yi-VL 34Bを凌駕しています**。特筆すべきは、MiniCPM-V 2.0は**強力なOCR能力**を示しており、シーンテキスト理解において**Gemini Proに匹敵するパフォーマンス**を達成し、オープンソースモデルの中では**OCRBench**で最先端のパフォーマンス**を発揮している。
 
-- 🏆 **Trustworthy Behavior.** 
+- 🏆 **信頼に値する行動。**
 
-  LMMs are known for suffering from hallucination, often generating text not factually grounded in images. MiniCPM-V 2.0 is **the first end-side LMM aligned via multimodal RLHF for trustworthy behavior** (using the recent [RLHF-V](https://rlhf-v.github.io/) [CVPR'24] series technique). This allows the model to **match GPT-4V in preventing hallucinations** on Object HalBench.
+  LMMはハルシネーションに悩まされることで知られ、しばしばイメージに基づかないテキストを生成する。MiniCPM-V 2.0は、**マルチモーダルRLHFにより信頼できる振る舞いを実現する**最初のエンドサイドLMMです(最近の[RLHF-V](https://rlhf-v.github.io/) [CVPR'24]シリーズの技術を使用)。これにより、このモデルはObject HalBenchにおいて**ハルシネーション防止においてGPT-4Vに匹敵する**。
 
-- 🌟 **High-Resolution Images at Any Aspect Raito.**
+- 🌟 **どんなアスペクトでも高解像度の画像を提供。**
 
-  MiniCPM-V 2.0 can accept **1.8 million pixels (e.g., 1344x1344) images at any aspect ratio**. This enables better perception of fine-grained visual information such as small objects and optical characters, which is achieved via a recent technique from [LLaVA-UHD](https://arxiv.org/pdf/2403.11703.pdf).
+  MiniCPM-V 2.0は、**180万画素（例：1344x1344）の画像を任意のアスペクト比で受け入れることができます**。これは、[LLaVA-UHD](https://arxiv.org/pdf/2403.11703.pdf)の最近の技術によって実現されたもので、小さな物体や光学的な文字のような細かい視覚情報のより良い知覚を可能にする。
 
-- ⚡️ **High Efficiency.** 
+- ⚡️ **High Efficiency.**
 
-  MiniCPM-V 2.0 can be **efficiently deployed on most GPU cards and personal computers**, and **even on end devices such as mobile phones**. For visual encoding, we compress the image representations into much fewer tokens via a perceiver resampler. This allows MiniCPM-V 2.0 to operate with **favorable memory cost and speed during inference even when dealing with high-resolution images**.
+  MiniCPM-V 2.0は、ほとんどのGPUカードやパーソナルコンピュータ**、そして**携帯電話などのエンドデバイス**にも効率的に導入することができます。視覚エンコーディングでは、perceiver resampler によって、画像表現をより少ないトークンに圧縮する。これにより、MiniCPM-V 2.0は、**高解像度画像を扱う場合でも、推論時に有利なメモリコストと速度で動作する**ことができます。
 
-- 🙌 **Bilingual Support.** 
+- 🙌 **Bilingual Support.**
 
-  MiniCPM-V 2.0 **supports strong bilingual multimodal capabilities in both English and Chinese**. This is enabled by generalizing multimodal capabilities across languages, a technique from [VisCPM](https://arxiv.org/abs/2308.12038) [ICLR'24].
+  MiniCPM-V 2.0 **英語と中国語の強力なバイリンガル・マルチモーダル機能をサポート**。これは、[VisCPM](https://arxiv.org/abs/2308.12038) [ICLR'24]の技術である、言語間のマルチモーダル能力を一般化することによって可能になる。
 
-### Examples <!-- omit in toc -->
+### 例 <!-- omit in toc -->
 
 <table align="center">
     <p align="center">
@@ -1210,7 +1207,7 @@ MiniCPM-Llama3-V 2.5 can be easily used in various ways: (1) [llama.cpp](https:/
     </p>
 </table>
 
-We deploy MiniCPM-V 2.0 on end devices. The demo video is the raw screen recording on a Xiaomi 14 Pro without edition.
+我々はMiniCPM-V 2.0をエンドデバイスに導入している。デモビデオはXiaomi 14 Pro（エディションなし）での生の画面録画です。
 
 <table align="center">
     <p align="center">
@@ -1221,79 +1218,79 @@ We deploy MiniCPM-V 2.0 on end devices. The demo video is the raw screen recordi
 
 </details>
 
-## Legacy Models <!-- omit in toc --> 
+## レガシーモデル <!-- omit in toc -->
 
-| Model                | Introduction and Guidance       |
+| モデル                | 導入とガイダンス       |
 |:----------------------|:-------------------:|
-| MiniCPM-V 1.0  | [Document](./minicpm_v1.md)   | 
-| OmniLMM-12B  | [Document](./omnilmm_en.md)   |  
+| MiniCPM-V 1.0  | [ドキュメント](./minicpm_v1.md)   |
+| OmniLMM-12B  | [ドキュメント](./omnilmm_en.md)   |
 
 
-## Chat with Our Demo on Gradio 🤗
+## Gradio🤗 のデモでチャット
 
-We provide online and local demos powered by Hugging Face Gradio <a href='https://github.com/gradio-app/gradio'><img src='https://img.shields.io/github/stars/gradio-app/gradio'></a>, the most popular model deployment framework nowadays. It supports streaming outputs, progress bars, queuing, alerts,  and other useful features.
+私たちは、現在最も人気のあるモデル展開フレームワークであるHugging Face Gradio <a href='https://github.com/gradio-app/gradio'><img src='https://img.shields.io/github/stars/gradio-app/gradio'></a> によるオンラインおよびローカルデモを提供しています。ストリーミング出力、プログレスバー、キューイング、アラート、その他の便利な機能をサポートしている。
 
 
-### Online Demo <!-- omit in toc --> 
+### オンラインデモ <!-- omit in toc -->
 
-Click here to try out the online demo of [MiniCPM-V 2.6](https://huggingface.co/spaces/openbmb/MiniCPM-V-2_6) | [MiniCPM-Llama3-V 2.5](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5) | [MiniCPM-V 2.0](https://huggingface.co/spaces/openbmb/MiniCPM-V-2).
+[MiniCPM-V 2.6](https://huggingface.co/spaces/openbmb/MiniCPM-V-2_6) | [MiniCPM-Llama3-V 2.5](https://huggingface.co/spaces/openbmb/MiniCPM-Llama3-V-2_5) | [MiniCPM-V 2.0](https://huggingface.co/spaces/openbmb/MiniCPM-V-2) のオンラインデモをお試しいただくには、こちらをクリックしてください。
 
-### Local WebUI Demo <!-- omit in toc --> 
-  
-You can easily build your own local WebUI demo with Gradio using the following commands.
-  
+### ローカル WebUI デモ <!-- omit in toc -->
+
+以下のコマンドを使えば、Gradio を使った独自のローカル WebUI デモを簡単に構築できる。
+
 ```shell
 pip install -r requirements.txt
 ```
-  
+
 ```shell
-# For NVIDIA GPUs, run:
+# NVIDIA GPUの場合は、以下を実行:
 python web_demo_2.6.py --device cuda
 
 ```
 
 
-## Install
+## インストール
 
-1. Clone this repository and navigate to the source folder
+1. このリポジトリをクローンし、ソースフォルダーに移動
 
 ```bash
 git clone https://github.com/OpenBMB/MiniCPM-V.git
 cd MiniCPM-V
 ```
 
-2. Create conda environment
+2. conda 環境の作成
 
 ```Shell
 conda create -n MiniCPM-V python=3.10 -y
 conda activate MiniCPM-V
 ```
 
-3. Install dependencies
+3. 依存関係のインストール
 
 ```shell
 pip install -r requirements.txt
 ```
 
-## Inference
+## 推論
 
 
 ### Model Zoo
 
-| Model           | Device | Memory    | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Description       | Download |
+| モデル           | デバイス | メモリ    | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 説明       | ダウンロード |
 |:-----------|:--:|:-----------:|:-------------------|:---------------:|
-| MiniCPM-V 2.6| GPU | 17 GB  | The latest version, achieving state-of-the-art end-side performance for single image, multi-image and video understanding.   |  [🤗](https://huggingface.co/openbmb/MiniCPM-V-2_6) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-V-2_6) |
-| MiniCPM-V 2.6 gguf | CPU | 6 GB  | The gguf version, lower memory usage and faster inference.   |  [🤗](https://huggingface.co/openbmb/MiniCPM-V-2_6-gguf) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-V-2_6-gguf) |
-| MiniCPM-V 2.6 int4 | GPU | 7 GB  | The int4 quantized version, lower GPU memory usage.   |  [🤗](https://huggingface.co/openbmb/MiniCPM-V-2_6-int4) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-V-2_6-int4) |
-| MiniCPM-Llama3-V 2.5 | GPU | 19 GB | Strong end-side multimodal performance.   |  [🤗](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5/) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-Llama3-V-2_5) |
-| MiniCPM-Llama3-V 2.5 gguf | CPU  | 6 GB | The gguf version, lower memory usage and faster inference.   |  [🤗](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-gguf) &nbsp;&nbsp;[<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-Llama3-V-2_5-gguf) |
-| MiniCPM-Llama3-V 2.5 int4 | GPU | 8 GB | The int4 quantized version, lower GPU memory usage. |  [🤗](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-int4/) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-Llama3-V-2_5-int4) |
-| MiniCPM-V 2.0 | GPU | 8 GB | Light version, balance the performance the computation cost.   |  [🤗](https://huggingface.co/openbmb/MiniCPM-V-2) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-V-2) |
-| MiniCPM-V 1.0 | GPU | 7 GB | Lightest version, achieving the fastest inference. |   [🤗](https://huggingface.co/openbmb/MiniCPM-V) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-V) |
+| MiniCPM-V 2.6| GPU | 17 GB  | 最新バージョンは、単一画像、複数画像、ビデオ理解のための最先端のエンドサイド性能を達成。   |  [🤗](https://huggingface.co/openbmb/MiniCPM-V-2_6) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-V-2_6) |
+| MiniCPM-V 2.6 gguf | CPU | 6 GB  | ggufバージョンは、メモリ使用量が少なく、推論が速い。   |  [🤗](https://huggingface.co/openbmb/MiniCPM-V-2_6-gguf) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-V-2_6-gguf) |
+| MiniCPM-V 2.6 int4 | GPU | 7 GB  | int4量子化バージョンは、GPUメモリ使用量が少ない。   |  [🤗](https://huggingface.co/openbmb/MiniCPM-V-2_6-int4) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-V-2_6-int4) |
+| MiniCPM-Llama3-V 2.5 | GPU | 19 GB | 強力なエンドサイドのマルチモーダル性能。   |  [🤗](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5/) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-Llama3-V-2_5) |
+| MiniCPM-Llama3-V 2.5 gguf | CPU  | 6 GB | ggufバージョンは、メモリ使用量が少なく、推論が速い。   |  [🤗](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-gguf) &nbsp;&nbsp;[<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-Llama3-V-2_5-gguf) |
+| MiniCPM-Llama3-V 2.5 int4 | GPU | 8 GB | int4量子化バージョンは、GPUメモリ使用量が少ない。 |  [🤗](https://huggingface.co/openbmb/MiniCPM-Llama3-V-2_5-int4/) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-Llama3-V-2_5-int4) |
+| MiniCPM-V 2.0 | GPU | 8 GB | 最軽量バージョンは、パフォーマンスと計算コストのバランスを取る。   |  [🤗](https://huggingface.co/openbmb/MiniCPM-V-2) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-V-2) |
+| MiniCPM-V 1.0 | GPU | 7 GB | 最軽量バージョンで最速の推論を実現。 |   [🤗](https://huggingface.co/openbmb/MiniCPM-V) &nbsp;&nbsp; [<img src="./assets/modelscope_logo.png" width="20px"></img>](https://modelscope.cn/models/OpenBMB/MiniCPM-V) |
 
-### Multi-turn Conversation
+### マルチターン会話
 
-Please refer to the following codes to run.
+以下のコードを参考に実行してください。
 
 <div align="center">
 <img src="assets/airplane.jpeg" width="500px">
@@ -1308,13 +1305,13 @@ from transformers import AutoModel, AutoTokenizer
 torch.manual_seed(0)
 
 model = AutoModel.from_pretrained('openbmb/MiniCPM-V-2_6', trust_remote_code=True,
-    attn_implementation='sdpa', torch_dtype=torch.bfloat16) # sdpa or flash_attention_2, no eager
+    attn_implementation='sdpa', torch_dtype=torch.bfloat16) # sdpaまたはflash_attention_2、eager なし
 model = model.eval().cuda()
 tokenizer = AutoTokenizer.from_pretrained('openbmb/MiniCPM-V-2_6', trust_remote_code=True)
 
 image = Image.open('./assets/airplane.jpeg').convert('RGB')
 
-# First round chat 
+# 第1ラウンドチャット
 question = "Tell me the model of this aircraft."
 msgs = [{'role': 'user', 'content': [image, question]}]
 
@@ -1325,8 +1322,8 @@ answer = model.chat(
 )
 print(answer)
 
-# Second round chat 
-# pass history context of multi-turn conversation
+# 第2ラウンドチャット
+# マルチターン会話のパス履歴コンテキスト
 msgs.append({"role": "assistant", "content": [answer]})
 msgs.append({"role": "user", "content": ["Introduce something about Airbus A380."]})
 
@@ -1338,7 +1335,7 @@ answer = model.chat(
 print(answer)
 ```
 
-You will get the following output:
+次のような出力が得られます:
 
 ```
 "The aircraft in the image is an Airbus A380, which can be identified by its large size, double-deck structure, and the distinctive shape of its wings and engines. The A380 is a wide-body aircraft known for being the world's largest passenger airliner, designed for long-haul flights. It has four engines, which are characteristic of large commercial aircraft. The registration number on the aircraft can also provide specific information about the model if looked up in an aviation database."
@@ -1346,17 +1343,17 @@ You will get the following output:
 "The Airbus A380 is a double-deck, wide-body, four-engine jet airliner made by Airbus. It is the world's largest passenger airliner and is known for its long-haul capabilities. The aircraft was developed to improve efficiency and comfort for passengers traveling over long distances. It has two full-length passenger decks, which can accommodate more passengers than a typical single-aisle airplane. The A380 has been operated by airlines such as Lufthansa, Singapore Airlines, and Emirates, among others. It is widely recognized for its unique design and significant impact on the aviation industry."
 ```
 
-#### Chat with multiple images
+#### 複数の画像を使ったチャット
 <details>
-<summary> Click to view Python code running MiniCPM-V 2.6 with multiple images input. </summary>
-  
+<summary> クリックすると、MiniCPM-V 2.6を複数の画像入力で実行するPythonコードが表示されます。 </summary>
+
 ```python
 import torch
 from PIL import Image
 from transformers import AutoModel, AutoTokenizer
 
 model = AutoModel.from_pretrained('openbmb/MiniCPM-V-2_6', trust_remote_code=True,
-    attn_implementation='sdpa', torch_dtype=torch.bfloat16) # sdpa or flash_attention_2, no eager
+    attn_implementation='sdpa', torch_dtype=torch.bfloat16) # sdpaまたはflash_attention_2、eager なし
 model = model.eval().cuda()
 tokenizer = AutoTokenizer.from_pretrained('openbmb/MiniCPM-V-2_6', trust_remote_code=True)
 
@@ -1377,7 +1374,7 @@ print(answer)
 
 #### In-context few-shot learning
 <details>
-<summary> Click to view Python code running MiniCPM-V 2.6 with few-shot input. </summary>
+<summary> クリックするとMiniCPM-V 2.6を実行するPythonコードが表示されます。 </summary>
 
 ```python
 import torch
@@ -1385,11 +1382,11 @@ from PIL import Image
 from transformers import AutoModel, AutoTokenizer
 
 model = AutoModel.from_pretrained('openbmb/MiniCPM-V-2_6', trust_remote_code=True,
-    attn_implementation='sdpa', torch_dtype=torch.bfloat16) # sdpa or flash_attention_2, no eager
+    attn_implementation='sdpa', torch_dtype=torch.bfloat16) # sdpaまたはflash_attention_2、eager なし
 model = model.eval().cuda()
 tokenizer = AutoTokenizer.from_pretrained('openbmb/MiniCPM-V-2_6', trust_remote_code=True)
 
-question = "production date" 
+question = "production date"
 image1 = Image.open('example1.jpg').convert('RGB')
 answer1 = "2023.08.04"
 image2 = Image.open('example2.jpg').convert('RGB')
@@ -1411,9 +1408,9 @@ print(answer)
 ```
 </details>
 
-#### Chat with video
+#### ビデオでチャット
 <details>
-<summary> Click to view Python code running MiniCPM-V 2.6 with video input. </summary>
+<summary> ビデオ入力でMiniCPM-V 2.6を実行するPythonコードを見るにはクリックしてください。 </summary>
 
 ```python
 import torch
@@ -1422,11 +1419,11 @@ from transformers import AutoModel, AutoTokenizer
 from decord import VideoReader, cpu    # pip install decord
 
 model = AutoModel.from_pretrained('openbmb/MiniCPM-V-2_6', trust_remote_code=True,
-    attn_implementation='sdpa', torch_dtype=torch.bfloat16) # sdpa or flash_attention_2, no eager
+    attn_implementation='sdpa', torch_dtype=torch.bfloat16) # sdpaまたはflash_attention_2、eager なし
 model = model.eval().cuda()
 tokenizer = AutoTokenizer.from_pretrained('openbmb/MiniCPM-V-2_6', trust_remote_code=True)
 
-MAX_NUM_FRAMES=64 # if cuda OOM set a smaller number
+MAX_NUM_FRAMES=64 # cuda OOMの場合、より小さい数値を設定する
 
 def encode_video(video_path):
     def uniform_sample(l, n):
@@ -1448,13 +1445,13 @@ video_path="video_test.mp4"
 frames = encode_video(video_path)
 question = "Describe the video"
 msgs = [
-    {'role': 'user', 'content': frames + [question]}, 
+    {'role': 'user', 'content': frames + [question]},
 ]
 
-# Set decode params for video
+# ビデオのデコードパラメータを設定する
 params = {}
 params["use_image_id"] = False
-params["max_slice_nums"] = 2 # use 1 if cuda OOM and video resolution > 448*448
+params["max_slice_nums"] = 2 # cuda OOMおよびビデオ解像度が448*448を超える場合は1を使用する
 
 answer = model.chat(
     image=None,
@@ -1467,16 +1464,16 @@ print(answer)
 </details>
 
 
-### Inference on Multiple GPUs
-You can run MiniCPM-Llama3-V 2.5 on multiple low VRAM GPUs (12 GB or 16 GB) by distributing the model's layers across multiple GPUs. Please refer to this [tutorial](https://github.com/OpenBMB/MiniCPM-V/blob/main/docs/inference_on_multiple_gpus.md) for detailed instructions on how to load the model and inference using multiple low VRAM GPUs.
+### マルチGPUでの推論
+モデルのレイヤーを複数のGPUに分散することで、複数の低VRAM GPU（12 GBまたは16 GB）でMiniCPM-Llama3-V 2.5を実行できます。複数の低VRAM GPUを使用したモデルのロードと推論の詳細な手順については、こちらの[チュートリアル](https://github.com/OpenBMB/MiniCPM-V/blob/main/docs/inference_on_multiple_gpus.md)を参照してください。
 
 
-### Inference on Mac
+### Macでの推論
 <details>
-<summary>Click to view an example, to run MiniCPM-Llama3-V 2.5 on 💻 Mac with MPS (Apple silicon or AMD GPUs). </summary>
+<summary>クリックすると、MiniCPM-Llama3-V 2.5をMPS（AppleシリコンまたはAMD GPU）搭載の📨Macで実行する例が表示されます。</summary>
 
 ```python
-# test.py  Need more than 16GB memory.
+# test.py  16GB以上のメモリが必要。
 import torch
 from PIL import Image
 from transformers import AutoModel, AutoTokenizer
@@ -1500,25 +1497,25 @@ answer, context, _ = model.chat(
 )
 print(answer)
 ```
-Run with command:
+コマンドで実行:
 ```shell
 PYTORCH_ENABLE_MPS_FALLBACK=1 python test.py
 ```
 </details>
 
-### Deployment on Mobile Phone
-MiniCPM-V 2.0 can be deployed on mobile phones with Android operating systems. 🚀 Click [MiniCPM-V 2.0](https://github.com/OpenBMB/mlc-MiniCPM) to install apk.
+### モバイルへのデプロイ
+MiniCPM-V 2.0 は Android OS 搭載の携帯電話にも導入可能です。🚀 [MiniCPM-V 2.0](https://github.com/OpenBMB/mlc-MiniCPM)をクリックして apk をインストールしてください。
 
-### Inference with llama.cpp
-MiniCPM-V 2.6 can run with llama.cpp now! See [our fork of llama.cpp](https://github.com/OpenBMB/llama.cpp/tree/minicpmv-main/examples/llava/README-minicpmv2.6.md) for more detail. This implementation supports smooth inference of 16~18 token/s on iPad (test environment：iPad Pro + M4).
+### llama.cppによる推論
+MiniCPM-V 2.6はllama.cppで動作するようになりました！詳しくは[our fork of llama.cpp](https://github.com/OpenBMB/llama.cpp/tree/minicpmv-main/examples/llava/README-minicpmv2.6.md)をご覧ください。この実装は、iPad（テスト環境：iPad Pro + M4）で16〜18トークン/秒のスムーズな推論をサポートします。
 
-### Inference with ollama
-MiniCPM-V 2.6 can run with ollama now! See [our fork of ollama](https://github.com/OpenBMB/ollama/blob/minicpm-v2.6/examples/minicpm-v2.6/README.md) for more detail. This implementation supports smooth inference of 16~18 token/s on iPad (test environment：iPad Pro + M4).
+### ollama の推論
+MiniCPM-V 2.6がollamaで動くようになりました！詳しくは [our fork of ollama](https://github.com/OpenBMB/ollama/blob/minicpm-v2.6/examples/minicpm-v2.6/README.md) をご覧ください。この実装は、iPad（テスト環境：iPad Pro + M4）で16〜18トークン/秒のスムーズな推論をサポートします。
 
-### Inference with vLLM
+### vLLMによる推論
 
 <details>
-<summary> vLLM now officially supports MiniCPM-V 2.6, MiniCPM-Llama3-V 2.5 and MiniCPM-V 2.0, Click to see. </summary>
+<summary> vLLMは現在、MiniCPM-V 2.6、MiniCPM-Llama3-V 2.5、MiniCPM-V 2.0を正式にサポートしています。 </summary>
 
 1. Install vLLM(>=0.5.4):
 ```shell
@@ -1528,14 +1525,14 @@ pip install vllm
 ```shell
 pip install timm==0.9.10
 ```
-3. Run the example(for image):
+3. 例を実行する(画像用):
 ```python
 from transformers import AutoTokenizer
 from PIL import Image
 from vllm import LLM, SamplingParams
 
 MODEL_NAME = "openbmb/MiniCPM-V-2_6"
-# Also available for previous models
+# 旧モデルにも対応
 # MODEL_NAME = "openbmb/MiniCPM-Llama3-V-2_5"
 # MODEL_NAME = "HwwwH/MiniCPM-V-2"
 
@@ -1552,9 +1549,9 @@ messages = [{
     "role":
     "user",
     "content":
-    # Number of images
+    # 画像数
     "(<image>./</image>)" + \
-    "\nWhat is the content of this image?" 
+    "\nWhat is the content of this image?"
 }]
 prompt = tokenizer.apply_chat_template(
     messages,
@@ -1562,16 +1559,16 @@ prompt = tokenizer.apply_chat_template(
     add_generation_prompt=True
 )
 
-# Single Inference
+# シングル推論
 inputs = {
     "prompt": prompt,
     "multi_modal_data": {
         "image": image
-        # Multi images, the number of images should be equal to that of `(<image>./</image>)`
-        # "image": [image, image] 
+        # マルチイメージの場合、画像の数は `(<image>./</image>)` の数と同じでなければなりません
+        # "image": [image, image]
     },
 }
-# Batch Inference
+# バッチ推論
 # inputs = [{
 #     "prompt": prompt,
 #     "multi_modal_data": {
@@ -1589,9 +1586,9 @@ stop_token_ids = [tokenizer.convert_tokens_to_ids(i) for i in stop_tokens]
 # stop_token_ids = [tokenizer.eos_id, tokenizer.eot_id]
 
 sampling_params = SamplingParams(
-    stop_token_ids=stop_token_ids, 
+    stop_token_ids=stop_token_ids,
     use_beam_search=True,
-    temperature=0, 
+    temperature=0,
     best_of=3,
     max_tokens=1024
 )
@@ -1600,45 +1597,45 @@ outputs = llm.generate(inputs, sampling_params=sampling_params)
 
 print(outputs[0].outputs[0].text)
 ```
-4. click [here](https://modelbest.feishu.cn/wiki/C2BWw4ZP0iCDy7kkCPCcX2BHnOf?from=from_copylink) if you want to use it with *video*, or get more details about `vLLM`.
+4. *video* で使用したい、あるいは `vLLM` の詳細を知りたい場合、[こちら](https://modelbest.feishu.cn/wiki/C2BWw4ZP0iCDy7kkCPCcX2BHnOf?from=from_copylink)をクリックしてください。
 </details>
 
 ## Fine-tuning
 
 ### Simple Fine-tuning <!-- omit in toc -->
 
-We support simple fine-tuning with Hugging Face for MiniCPM-V 2.0 and MiniCPM-Llama3-V 2.5.
+Hugging Face for MiniCPM-V 2.0とMiniCPM-Llama3-V 2.5で簡単なファインチューニングをサポートします。
 
 [Reference Document](./finetune/readme.md)
 
-### With the SWIFT Framework <!-- omit in toc -->
+### SWIFT フレームワーク <!-- omit in toc -->
 
-We now support MiniCPM-V series fine-tuning with the SWIFT framework. SWIFT supports training, inference, evaluation and deployment of nearly 200 LLMs and MLLMs . It supports the lightweight training solutions provided by PEFT and a complete Adapters Library including techniques such as NEFTune, LoRA+ and LLaMA-PRO.
+我々は現在、SWIFT フレームワークによる MiniCPM-V シリーズのファインチューニングをサポートしている。SWIFTは、約200のLLMとMLLMのトレーニング、推論、評価、デプロイメントをサポートします。SWIFTは、PEFTが提供する軽量トレーニングソリューションと、NEFTune、LoRA+、LLaMA-PROなどの技術を含む完全なアダプターライブラリをサポートしています。
 
 Best Practices：[MiniCPM-V 1.0](https://github.com/modelscope/swift/blob/main/docs/source/Multi-Modal/minicpm-v最佳实践.md), [MiniCPM-V 2.0](https://github.com/modelscope/swift/blob/main/docs/source/Multi-Modal/minicpm-v-2最佳实践.md)
 
 ## FAQs
-Click here to view the [FAQs](./docs/faqs.md)
+[FAQ](./docs/faqs.md) はこちら
 
-## Model License <!-- omit in toc -->
+## モデルライセンス <!-- omit in toc -->
 
-* This repository is released under the [Apache-2.0](https://github.com/OpenBMB/MiniCPM/blob/main/LICENSE) License. 
+* このリポジトリは[Apache-2.0](https://github.com/OpenBMB/MiniCPM/blob/main/LICENSE)ライセンスのもとで公開されています。
 
-* The usage of MiniCPM-V model weights must strictly follow [MiniCPM Model License.md](https://github.com/OpenBMB/MiniCPM/blob/main/MiniCPM%20Model%20License.md).
+* MiniCPM-V モデルウェイトの使用は、[MiniCPM Model License.md](https://github.com/OpenBMB/MiniCPM/blob/main/MiniCPM%20Model%20License.md)に厳密に従わなければならない。
 
-* The models and weights of MiniCPM are completely free for academic research. after filling out a ["questionnaire"](https://modelbest.feishu.cn/share/base/form/shrcnpV5ZT9EJ6xYjh3Kx0J6v8g) for registration, are also available for free commercial use.
-  
-
-## Statement <!-- omit in toc -->
-
-As LMMs, MiniCPM-V models (including OmniLMM) generate contents by learning a large amount of multimodal corpora, but they cannot comprehend, express personal opinions or make value judgement. Anything generated by MiniCPM-V models does not represent the views and positions of the model developers
-
-We will not be liable for any problems arising from the use of MiniCPM-V models, including but not limited to data security issues, risk of public opinion, or any risks and problems arising from the misdirection, misuse, dissemination or misuse of the model.
+* MiniCPMのモデルとウェイトは、学術研究のために完全に無料です。登録のための["アンケート"](https://modelbest.feishu.cn/share/base/form/shrcnpV5ZT9EJ6xYjh3Kx0J6v8g)に記入した後、無料の商用利用も可能です。
 
 
-## Institutions  <!-- omit in toc -->
+## ステートメント <!-- omit in toc -->
 
-This project is developed by the following institutions:
+LMMであるMiniCPM-Vモデル（OmniLMMを含む）は、大量のマルチモーダルコーパスを学習してコンテンツを生成するが、理解したり、個人的な意見を述べたり、価値判断をしたりすることはできない。MiniCPM-Vモデルによって生成されたものは、モデル開発者の見解や立場を表すものではない
+
+MiniCPM-Vモデルを使用することにより発生する問題（データセキュリティ上の問題、世論のリスク、モデルの誤導、誤用、流布、誤用に起因するリスクや問題を含むがこれらに限定されない）については、当社は一切責任を負いません。
+
+
+## 機関  <!-- omit in toc -->
+
+このプロジェクトは以下の機関によって開発されています:
 
 - <img src="assets/thunlp.png" width="28px"> [THUNLP](https://nlp.csai.tsinghua.edu.cn/)
 - <img src="assets/modelbest.png" width="28px"> [ModelBest](https://modelbest.cn/)
@@ -1672,16 +1669,16 @@ This project is developed by the following institutions:
   />
 </picture> -->
 
-## Key Techniques and Other Multimodal Projects <!-- omit in toc -->
+## 主要技術とその他のマルチモーダルプロジェクト <!-- omit in toc -->
 
-👏 Welcome to explore key techniques of MiniCPM-V and other multimodal projects of our team:
+👏 MiniCPM-V の主な技術や、私たちのチームの他のマルチモーダルプロジェクトを探求することを歓迎します。:
 
 [VisCPM](https://github.com/OpenBMB/VisCPM/tree/main) | [RLHF-V](https://github.com/RLHF-V/RLHF-V) | [LLaVA-UHD](https://github.com/thunlp/LLaVA-UHD) | [RLAIF-V](https://github.com/RLHF-V/RLAIF-V)
 
 
-## Citation <!-- omit in toc -->
+## 引用 <!-- omit in toc -->
 
-If you find our model/code/paper helpful, please consider cite our papers 📝 and star us ⭐️！
+もし私たちのモデル/コード/論文が役に立ったと思われましたら、私たちの論文を引用してください📝 そして私たちに star をつけてください ⭐️！
 
 ```bib
 @article{yao2024minicpm,

@@ -7,7 +7,8 @@
 **端侧可用的 GPT-4V 级单图、多图、视频多模态大模型**
 
   <strong>中文 |
-  [English](./README_en.md)</strong>
+  [English](./README_en.md) |
+  [日本語](./README_ja.md)</strong>
 
  加入我们的 <a href="docs/wechat.md" target="_blank"> 💬 微信社区</a> 
 
